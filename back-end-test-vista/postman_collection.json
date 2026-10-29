@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "Vista API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "http://localhost:3000/health" }
+    },
+    {
+      "name": "Create company",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Acme\",\n  \"registrationNumber\": \"REG123\"\n}" },
+        "url": "http://localhost:3000/companies"
+      }
+    },
+    {
+      "name": "List companies with services",
+      "request": { "method": "GET", "url": "http://localhost:3000/companies" }
+    },
+    {
+      "name": "Create service",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"companyId\": 1,\n  \"name\": \"Web Design\",\n  \"description\": \"Landing pages\",\n  \"price\": 500\n}" },
+        "url": "http://localhost:3000/services"
+      }
+    },
+    {
+      "name": "Get service by ID",
+      "request": { "method": "GET", "url": "http://localhost:3000/services/1" }
+    }
+  ]
+}
